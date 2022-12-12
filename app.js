@@ -20,6 +20,7 @@ function clearAll() {
 
 function conclusion() {
   document.querySelector('.result').textContent = result;
+  console.log(document.querySelector('.result').textContent)
 }
 function math() {
   if (document.getElementById('sign').value === 'Sapok') {
@@ -27,7 +28,12 @@ function math() {
     setTimeout(() => {
       document.querySelector('.scrimer').classList.remove('active')
     }, 500);
-  } else { 
+  }
+
+
+
+
+
   a = numOne.value;
   a = parseInt(a);
 
@@ -50,7 +56,7 @@ function math() {
     result = `Результат: ${a ** b}`;
   } 
   conclusion();
-}};
+};
 
 document.querySelector('.calcbtn-clear').addEventListener('click', () => {
   clearAll();
