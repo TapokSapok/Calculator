@@ -21,15 +21,20 @@ function clearAll() {
 function conclusion() {
   document.querySelector('.result').textContent = result;
 }
-
 function math() {
- a = numOne.value;
- a = parseInt(a);
+  if (document.getElementById('sign').value === 'Sapok') {
+    document.querySelector('.scrimer').classList.add('active')
+    setTimeout(() => {
+      document.querySelector('.scrimer').classList.remove('active')
+    }, 500);
+  } else { 
+  a = numOne.value;
+  a = parseInt(a);
 
- sign = document.getElementById('sign').value;
+  sign = document.getElementById('sign').value;
 
- b = numTwo.value
- b = parseInt(b);
+  b = numTwo.value
+  b = parseInt(b);
 
   if (sign === '+') {
     result = `Результат: ${a + b}`;
@@ -45,7 +50,7 @@ function math() {
     result = `Результат: ${a ** b}`;
   } 
   conclusion();
-}
+}};
 
 document.querySelector('.calcbtn-clear').addEventListener('click', () => {
   clearAll();
@@ -63,4 +68,3 @@ document.querySelector('.helpBarBtn').addEventListener('click', () => {
     document.querySelector('.helpBarMenu').classList.add('active');
   }
 });
-
